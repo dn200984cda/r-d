@@ -1,6 +1,5 @@
 import re
 import lxml
-#import lxml.etree
 from lxml import etree
 import requests
 
@@ -26,6 +25,7 @@ def parse_jobs():
     pattern = r'<h3 class="jobCard_title m-0">(.*)<\/h3>'
     title_pattern = r'<h3 class="jobCard_title m-0">(.*)<\/h3>'
     url_pattern = r'<a href="(.*)" title'
+
     card_titles = re.findall(pattern, content)
     for i, c_title in enumerate(card_titles, 1):
             print(f"{i}. {c_title}")
@@ -33,13 +33,22 @@ def parse_jobs():
     tree = etree.HTML(content)
     xpath = '//article'
     articles = tree.xpath(xpath)
+    jobs = []
     #print(article.tostring(element, encoding='unicode', pretty_print=True))
    
     for i, article in enumerate(articles, 1):
            article_content = etree.tostring(article, encoding='unicode', pretty_print=True)
            title = re.findall(title_pattern, article_content)
            url = re.findall(url_pattern, article_content)
-           print(f"{i}. title: {title[0]} url: {url[0]}")
+           #print(f"{i}. title: {title[0]} url: {url[0]}")
+           jobs.append(
+                {
+                     "title": title[0],
+                     "url": url[0]
+                }
+           )
+
+    print(jobs)
 
 
 if __name__ == "__main__":
