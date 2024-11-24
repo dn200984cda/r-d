@@ -44,11 +44,11 @@ def bs_parse():
     cards = news.find_all('div', class_=re.compile('.*Stack.*'))
     print(cards.__len__())
     results = []
-    for card in cards:
+    for card in cards[:5]:
         url = card.find('a').get('href')
         directLink = 'https://www.bbc.com' + url
         #print(directLink)
-        parse_page(directLink)
+        #parse_page(directLink)
         results.append(parse_page(directLink))
 
     write_json(results)
