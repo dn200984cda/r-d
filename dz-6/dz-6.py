@@ -39,15 +39,18 @@ def bs_parse():
     #        article_content = etree.tostring(article, encoding='unicode', pretty_print=True)
     #        print(article_content)
 
-    news = soup.find('div', class_=re.compile('HierachichalCollectionsWrapper'))
+    #news = soup.find('div', class_=re.compile('HierachichalCollectionsWrapper'))
     #print(news)
-    cards = news.find_all('div', class_=re.compile('.*Stack.*'))
+    #cards = news.find_all('div', class_=re.compile('.*Stack.*'))
+
+    cards = soup.select('div[class*="HierachichalCollectionsWrapper"] div[class*="Stack"] a[href*="articles"]:not([href*="comments"])')
     print(cards.__len__())
+    
     results = []
     for card in cards[:5]:
-        url = card.find('a').get('href')
+        url = card.get('href')
         directLink = 'https://www.bbc.com' + url
-        #print(directLink)
+        print(directLink)
         #parse_page(directLink)
         results.append(parse_page(directLink))
 

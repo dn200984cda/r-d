@@ -1,21 +1,9 @@
 [
     {
-        "url": "https://www.bbc.com/sport/football/live/cr7rnmy190lt",
-        "topics": []
-    },
-    {
-        "url": "https://www.bbc.com/sport/football/premier-league",
-        "topics": []
-    },
-    {
         "url": "https://www.bbc.com/sport/formula1/articles/cdxy7e926yzo",
         "topics": [
             "Formula 1"
         ]
-    },
-    {
-        "url": "https://www.bbc.com/sport/formula1",
-        "topics": []
     },
     {
         "url": "https://www.bbc.com/sport/cricket/articles/cy8ne7p23weo",
@@ -23,6 +11,42 @@
             "India",
             "Australia",
             "Cricket"
+        ]
+    },
+    {
+        "url": "https://www.bbc.com/sport/football/articles/cn42rn78d1go",
+        "topics": [
+            "Premier League",
+            "Manchester City",
+            "Football"
+        ]
+    },
+    {
+        "url": "https://www.bbc.com/sport/football/articles/c4gpv7glq74o",
+        "topics": [
+            "Blackburn Rovers",
+            "League Two",
+            "Oldham Athletic",
+            "AFC Fylde",
+            "Rochdale",
+            "Fleetwood Town",
+            "Salford City",
+            "Bromley",
+            "Milton Keynes Dons",
+            "Portsmouth",
+            "Accrington Stanley",
+            "League One",
+            "Ebbsfleet United",
+            "Football",
+            "Bradford City",
+            "National League"
+        ]
+    },
+    {
+        "url": "https://www.bbc.com/sport/football/articles/cg7g4m8dkd1o",
+        "topics": [
+            "Manchester United",
+            "Football"
         ]
     }
 ]
