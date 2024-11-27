@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 def get_content():
     #user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
-    url = 'https://www.bbc.com/sport'
+    url = 'https://quotes.toscrape.com/'
     response = requests.get(
         url,
         headers={
@@ -19,6 +19,7 @@ def get_content():
     #print(response.text)
     with open('dz-6-content', 'w', encoding='utf-8') as f:
         f.write(response.text)
+
 
 def bs_parse():
     with open('dz-6-content.html', 'r', encoding='utf-8') as f:
@@ -45,7 +46,7 @@ def bs_parse():
 
     cards = soup.select('div[class*="HierachichalCollectionsWrapper"] div[class*="Stack"] a[href*="articles"]:not([href*="comments"])')
     print(cards.__len__())
-    
+
     results = []
     for card in cards[:5]:
         url = card.get('href')
