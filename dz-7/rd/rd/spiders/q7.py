@@ -1,5 +1,5 @@
 import scrapy
-
+import re
 
 class Q7Spider(scrapy.Spider):
     name = "q7"
@@ -17,6 +17,7 @@ class Q7Spider(scrapy.Spider):
 
         for qoute in quotes:
             txt = qoute.xpath("./span[contains(@class,'text')]/text()").get()
+            txt = txt.replace('“', '').replace('”', '')
             author = qoute.xpath(".//small[contains(@class,'author')]/text()").get()
             yield {
                 "text": txt,
